@@ -1,7 +1,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Webserver Junk
 
+#[path = "config.rs"]
 mod config;
+
+#[path = "handlers.rs"]
 mod handlers;
 
 use actix_web::{ 
@@ -12,7 +15,6 @@ use actix_web::{
 };
 
 use dotenv::dotenv;
-
 
 #[actix_web::main]
 async fn main() -> Result<()> {
@@ -38,7 +40,7 @@ async fn main() -> Result<()> {
                 )
             )
     })
-    .bind(cfg.api_addr.clone());
+    .bind(cfg.api_addr.clone())?
     .run();
     server.await
 }
