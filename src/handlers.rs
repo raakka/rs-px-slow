@@ -27,6 +27,8 @@ pub mod px_generators{
     pub async fn genpx3 (
         client_req: web::Json<Px3ClientReq>,
     ) -> Result<HttpResponse, Error> {
-        Ok(HttpResponse::Ok().json(client_req))
+        // same tesing junk...
+        let client_req_inf: Px3ClientReq = client_req.into_inner();
+        Ok(HttpResponse::Ok().json(client_req_inf))
     } 
 }

@@ -14,9 +14,6 @@ use actix_web::{
     middleware
 };
 
-use dotenv::dotenv;
-use crate::config::config::Config;
-
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     // starting our logger...
