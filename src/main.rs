@@ -15,6 +15,7 @@ use actix_web::{
 };
 
 use dotenv::dotenv;
+use crate::config::config::Config;
 
 #[actix_web::main]
 async fn main() -> Result<()> {
@@ -23,7 +24,7 @@ async fn main() -> Result<()> {
     env_logger::init();
     
     // getting our .env settings
-    let cfg = config::Config::from_env().unwrap(); 
+    let cfg = crate::config::config::Config::from_env().unwrap(); 
 
     // I don't know if I like these routes... 
     // Should these be version specific or maybe nah?
