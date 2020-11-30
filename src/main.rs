@@ -18,7 +18,7 @@ use dotenv::dotenv;
 use crate::config::config::Config;
 
 #[actix_web::main]
-async fn main() -> Result<()> {
+async fn main() -> std::io::Result<()> {
     // starting our logger...
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
