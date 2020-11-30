@@ -17,10 +17,12 @@ pub mod models {
     } 
 
     // this is the res we send the client when genning for PX2
+    // this is also what we expect back from the PX2 req
     #[derive(Serialize, Deserialize)]
     pub struct Px2ClientRes {
         // lol this is a bad way of getting past typechecking but whatever :/
-        pub px2res: Vec<String>,
+        pub t: String,
+        pub d: Map<String, Value>,
     }
     
 ///////////////////////////////////////////////////////////////////////////////////////////////////

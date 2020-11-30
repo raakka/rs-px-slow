@@ -14,8 +14,18 @@ pub mod px_generators{
     ) -> Result<HttpResponse, Error> {
         // this is just testing
         let client_req_inf: Px2ClientReq = client_req.into_inner();
-        // we are just returing the request given to the ws
-        Ok(HttpResponse::Ok().json(client_req_inf))
+        
+        // okay are we doing things now?
+        // this is mad invalid rn 
+        // TODO(XVI): fix this bs bro??!!
+        let px2_result: web::Json<Px2ClientRes> = match client_req_inf.site {
+            // add more sites here
+            "walmart" => ok(),
+            "hibbet" => ok(),
+            "solebox" => ok(),
+        }
+
+        Ok(HttpResponse::Ok().json(px2_result.into_inner()))
     }
 
     pub async fn genpx3 (
