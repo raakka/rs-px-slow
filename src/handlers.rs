@@ -2,13 +2,7 @@
 mod models;
 
 pub mod px_generators{
-    use super::models::models::{
-        Px2ClientReq,
-        Px2ClientRes,
-        Px3ClientReq,
-        Px3ClientRes
-    };
-
+    
     use actix_web::{ 
         web,
         Error,
